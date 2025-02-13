@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
+using NationalInstruments.Restricted;
+using System.CodeDom.Compiler;
 
 namespace AF_TEST_GUI
 {
@@ -48,28 +50,41 @@ namespace AF_TEST_GUI
         }
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
-            string data = _serialPort.ReadExisting();
-            Invoke(new Action(() => textBox1.AppendText(data + Environment.NewLine)));
+              string data = _serialPort.ReadLine();
+            //Invoke(new Action(() => textBox1.AppendText(data + Environment.NewLine)));
             if (data[0] =='F')
             {
 
                 //Invoke(new Action(() => FW_P_OUT.AppendText("")));
-                string value = data.Substring(1);
-                Invoke(new Action(() => FW_P_OUT.Text = value));
+
+                // Invoke(new Action(() => textBox1.AppendText(data + Environment.NewLine)));
+                string value1 = data.Substring(1);              
+                Invoke(new Action(() => FW_P_OUT.Text = value1));
+                double fout=0.0;
+                double.TryParse(value1,out fout);
+                FW_POWER.Value = fout;
+                //Invoke(new Action(() => textBox1.AppendText(value1 + Environment.NewLine)));
+                data = "";
                 
-
+                
             }
-            if(data[0] =='R')
+            else if(data[0] =='R')
             {
 
-                string value = data.Substring(1);
-                Invoke(new Action(() => RW_PWR_OUT.Text = value));
+                string value2 = data.Substring(1);
+                Invoke(new Action(() => RW_PWR_OUT.Text = value2));
+                double fout = 0.0;
+                double.TryParse(value2, out fout);
+                RW_POWER.Value = fout;
+                data = "";
             }
-            if (data[0] == 'T')
+            else if (data[0] == 'T')
             {
 
-                string value = data.Substring(1);
-                Invoke(new Action(() => TMP_OUTPUT.Text = value));
+                string value3 = data.Substring(1);
+                Invoke(new Action(() => TMP_OUTPUT.Text = value3));
+                //TEMP_M.Value = Convert.ToSingle(value3);
+                data = "";
             }
         }
 
@@ -135,6 +150,12 @@ namespace AF_TEST_GUI
 
         private void label6_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void Jig_enable_StateChanged(object sender, NationalInstruments.UI.ActionEventArgs e)
+        {
+            
 
         }
     }

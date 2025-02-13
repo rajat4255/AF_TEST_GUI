@@ -33,7 +33,7 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.btn_Open = new System.Windows.Forms.Button();
             this.btn_Close = new System.Windows.Forms.Button();
-            this.thermometer1 = new NationalInstruments.UI.WindowsForms.Thermometer();
+            this.TEMP_M = new NationalInstruments.UI.WindowsForms.Thermometer();
             this.FW_POWER = new NationalInstruments.UI.WindowsForms.Meter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.RW_POWER = new NationalInstruments.UI.WindowsForms.Meter();
@@ -43,16 +43,16 @@
             this.FW_P_OUT = new System.Windows.Forms.TextBox();
             this.RW_PWR_OUT = new System.Windows.Forms.TextBox();
             this.TMP_OUTPUT = new System.Windows.Forms.TextBox();
-            this.switch1 = new NationalInstruments.UI.WindowsForms.Switch();
+            this.Jig_enable = new NationalInstruments.UI.WindowsForms.Switch();
             this.Jig_lebel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.Com_Port_lebel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.thermometer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TEMP_M)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FW_POWER)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.RW_POWER)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.switch1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Jig_enable)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -90,15 +90,15 @@
             this.btn_Close.UseVisualStyleBackColor = false;
             this.btn_Close.Click += new System.EventHandler(this.button2_Click);
             // 
-            // thermometer1
+            // TEMP_M
             // 
-            this.thermometer1.Border = NationalInstruments.UI.Border.SolidBlack;
-            this.thermometer1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.thermometer1.Location = new System.Drawing.Point(866, 53);
-            this.thermometer1.Name = "thermometer1";
-            this.thermometer1.Range = new NationalInstruments.UI.Range(-14D, 273D);
-            this.thermometer1.Size = new System.Drawing.Size(99, 390);
-            this.thermometer1.TabIndex = 4;
+            this.TEMP_M.Border = NationalInstruments.UI.Border.SolidBlack;
+            this.TEMP_M.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.TEMP_M.Location = new System.Drawing.Point(866, 53);
+            this.TEMP_M.Name = "TEMP_M";
+            this.TEMP_M.Range = new NationalInstruments.UI.Range(-14D, 273D);
+            this.TEMP_M.Size = new System.Drawing.Size(99, 390);
+            this.TEMP_M.TabIndex = 4;
             // 
             // FW_POWER
             // 
@@ -193,23 +193,24 @@
             // 
             // TMP_OUTPUT
             // 
-            this.TMP_OUTPUT.Location = new System.Drawing.Point(902, 478);
+            this.TMP_OUTPUT.Location = new System.Drawing.Point(905, 480);
             this.TMP_OUTPUT.Name = "TMP_OUTPUT";
             this.TMP_OUTPUT.Size = new System.Drawing.Size(95, 22);
             this.TMP_OUTPUT.TabIndex = 13;
             // 
-            // switch1
+            // Jig_enable
             // 
-            this.switch1.BackColor = System.Drawing.SystemColors.Info;
-            this.switch1.Border = NationalInstruments.UI.Border.ThinFrame3D;
-            this.switch1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.switch1.Location = new System.Drawing.Point(206, 203);
-            this.switch1.Name = "switch1";
-            this.switch1.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.switch1.OnColor = System.Drawing.Color.Red;
-            this.switch1.Size = new System.Drawing.Size(64, 96);
-            this.switch1.SwitchStyle = NationalInstruments.UI.SwitchStyle.VerticalToggle3D;
-            this.switch1.TabIndex = 14;
+            this.Jig_enable.BackColor = System.Drawing.SystemColors.Info;
+            this.Jig_enable.Border = NationalInstruments.UI.Border.ThinFrame3D;
+            this.Jig_enable.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Jig_enable.Location = new System.Drawing.Point(206, 203);
+            this.Jig_enable.Name = "Jig_enable";
+            this.Jig_enable.OffColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.Jig_enable.OnColor = System.Drawing.Color.Red;
+            this.Jig_enable.Size = new System.Drawing.Size(64, 96);
+            this.Jig_enable.SwitchStyle = NationalInstruments.UI.SwitchStyle.VerticalToggle3D;
+            this.Jig_enable.TabIndex = 14;
+            this.Jig_enable.StateChanged += new NationalInstruments.UI.ActionEventHandler(this.Jig_enable_StateChanged);
             // 
             // Jig_lebel
             // 
@@ -285,7 +286,7 @@
             this.Controls.Add(this.Com_Port_lebel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.Jig_lebel);
-            this.Controls.Add(this.switch1);
+            this.Controls.Add(this.Jig_enable);
             this.Controls.Add(this.TMP_OUTPUT);
             this.Controls.Add(this.RW_PWR_OUT);
             this.Controls.Add(this.FW_P_OUT);
@@ -294,7 +295,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.RW_POWER);
             this.Controls.Add(this.FW_POWER);
-            this.Controls.Add(this.thermometer1);
+            this.Controls.Add(this.TEMP_M);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_Close);
             this.Controls.Add(this.btn_Open);
@@ -303,10 +304,10 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.thermometer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TEMP_M)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FW_POWER)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.RW_POWER)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.switch1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Jig_enable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,7 +319,7 @@
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Button btn_Open;
         private System.Windows.Forms.Button btn_Close;
-        private NationalInstruments.UI.WindowsForms.Thermometer thermometer1;
+        private NationalInstruments.UI.WindowsForms.Thermometer TEMP_M;
         private NationalInstruments.UI.WindowsForms.Meter FW_POWER;
         private System.Windows.Forms.TextBox textBox1;
         private NationalInstruments.UI.WindowsForms.Meter RW_POWER;
@@ -328,7 +329,7 @@
         private System.Windows.Forms.TextBox FW_P_OUT;
         private System.Windows.Forms.TextBox RW_PWR_OUT;
         private System.Windows.Forms.TextBox TMP_OUTPUT;
-        private NationalInstruments.UI.WindowsForms.Switch switch1;
+        private NationalInstruments.UI.WindowsForms.Switch Jig_enable;
         private System.Windows.Forms.Label Jig_lebel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label Com_Port_lebel;
