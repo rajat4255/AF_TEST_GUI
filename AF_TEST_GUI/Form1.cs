@@ -13,10 +13,10 @@ using System.CodeDom.Compiler;
 
 namespace AF_TEST_GUI
 {
-    public partial class Form1 : Form
+    public partial class RF_JIG : Form
     {
         private SerialPort _serialPort;
-        public Form1()
+        public RF_JIG()
         {
             InitializeComponent();
             LoadAvailablePorts();
@@ -51,7 +51,7 @@ namespace AF_TEST_GUI
         private void DataReceivedHandler(object sender, SerialDataReceivedEventArgs e)
         {
               string data = _serialPort.ReadLine();
-            //Invoke(new Action(() => textBox1.AppendText(data + Environment.NewLine)));
+            Invoke(new Action(() => textBox1.AppendText(data + Environment.NewLine)));
             if (data[0] =='F')
             {
 
@@ -84,6 +84,9 @@ namespace AF_TEST_GUI
                 string value3 = data.Substring(1);
                 Invoke(new Action(() => TMP_OUTPUT.Text = value3));
                 //TEMP_M.Value = Convert.ToSingle(value3);
+                double fout = 0.0;
+                double.TryParse(value3, out fout);
+                TEMP_M.Value = fout;
                 data = "";
             }
         }

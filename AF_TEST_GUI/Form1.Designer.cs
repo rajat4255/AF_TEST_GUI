@@ -1,6 +1,6 @@
 ﻿namespace AF_TEST_GUI
 {
-    partial class Form1
+    partial class RF_JIG
     {
         /// <summary>
         /// Required designer variable.
@@ -92,25 +92,27 @@
             // 
             // TEMP_M
             // 
-            this.TEMP_M.Border = NationalInstruments.UI.Border.SolidBlack;
-            this.TEMP_M.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.TEMP_M.Location = new System.Drawing.Point(866, 53);
+            this.TEMP_M.CaptionBackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TEMP_M.FillBackColor = System.Drawing.Color.Gray;
+            this.TEMP_M.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.TEMP_M.Location = new System.Drawing.Point(852, 40);
             this.TEMP_M.Name = "TEMP_M";
             this.TEMP_M.Range = new NationalInstruments.UI.Range(-14D, 273D);
-            this.TEMP_M.Size = new System.Drawing.Size(99, 390);
+            this.TEMP_M.ScaleBaseLineColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.TEMP_M.Size = new System.Drawing.Size(137, 424);
             this.TEMP_M.TabIndex = 4;
             // 
             // FW_POWER
             // 
-            this.FW_POWER.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.FW_POWER.BackColor = System.Drawing.Color.DarkGray;
             this.FW_POWER.Border = NationalInstruments.UI.Border.SolidBlack;
             this.FW_POWER.DialColor = System.Drawing.SystemColors.Info;
-            this.FW_POWER.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.FW_POWER.Location = new System.Drawing.Point(482, 62);
+            this.FW_POWER.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FW_POWER.Location = new System.Drawing.Point(501, 40);
             this.FW_POWER.Name = "FW_POWER";
             this.FW_POWER.Range = new NationalInstruments.UI.Range(0D, 53D);
             this.FW_POWER.Size = new System.Drawing.Size(214, 100);
-            this.FW_POWER.SpindleColor = System.Drawing.Color.RosyBrown;
+            this.FW_POWER.SpindleColor = System.Drawing.Color.MidnightBlue;
             this.FW_POWER.TabIndex = 5;
             this.FW_POWER.AfterChangeValue += new NationalInstruments.UI.AfterChangeNumericValueEventHandler(this.FW_POWER_AfterChangeValue);
             // 
@@ -125,15 +127,15 @@
             // 
             // RW_POWER
             // 
-            this.RW_POWER.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.RW_POWER.BackColor = System.Drawing.Color.DarkGray;
             this.RW_POWER.Border = NationalInstruments.UI.Border.SolidBlack;
             this.RW_POWER.DialColor = System.Drawing.SystemColors.Info;
-            this.RW_POWER.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.RW_POWER.Location = new System.Drawing.Point(495, 296);
+            this.RW_POWER.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.RW_POWER.Location = new System.Drawing.Point(530, 274);
             this.RW_POWER.Name = "RW_POWER";
             this.RW_POWER.Range = new NationalInstruments.UI.Range(0D, 53D);
             this.RW_POWER.Size = new System.Drawing.Size(214, 100);
-            this.RW_POWER.SpindleColor = System.Drawing.Color.RosyBrown;
+            this.RW_POWER.SpindleColor = System.Drawing.Color.MidnightBlue;
             this.RW_POWER.TabIndex = 6;
             this.RW_POWER.AfterChangeValue += new NationalInstruments.UI.AfterChangeNumericValueEventHandler(this.meter2_AfterChangeValue);
             // 
@@ -143,11 +145,11 @@
             this.label1.BackColor = System.Drawing.SystemColors.Info;
             this.label1.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(478, 185);
+            this.label1.Location = new System.Drawing.Point(466, 163);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 20);
+            this.label1.Size = new System.Drawing.Size(172, 20);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Forward Power";
+            this.label1.Text = "Forward Power(dbm)";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
@@ -156,11 +158,11 @@
             this.label2.BackColor = System.Drawing.SystemColors.Info;
             this.label2.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(478, 423);
+            this.label2.Location = new System.Drawing.Point(466, 405);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(126, 20);
+            this.label2.Size = new System.Drawing.Size(173, 20);
             this.label2.TabIndex = 8;
-            this.label2.Text = "Reverse  Power";
+            this.label2.Text = "Reverse  Power(dbm)";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
@@ -169,33 +171,33 @@
             this.label3.BackColor = System.Drawing.SystemColors.Info;
             this.label3.Font = new System.Drawing.Font("Georgia", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(753, 480);
+            this.label3.Location = new System.Drawing.Point(711, 498);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.Size = new System.Drawing.Size(141, 20);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Temperature";
+            this.label3.Text = "Temperature(°C)";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // FW_P_OUT
             // 
-            this.FW_P_OUT.Location = new System.Drawing.Point(625, 185);
+            this.FW_P_OUT.Location = new System.Drawing.Point(676, 161);
             this.FW_P_OUT.Name = "FW_P_OUT";
-            this.FW_P_OUT.Size = new System.Drawing.Size(100, 22);
+            this.FW_P_OUT.Size = new System.Drawing.Size(108, 22);
             this.FW_P_OUT.TabIndex = 11;
             this.FW_P_OUT.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // RW_PWR_OUT
             // 
-            this.RW_PWR_OUT.Location = new System.Drawing.Point(625, 423);
+            this.RW_PWR_OUT.Location = new System.Drawing.Point(676, 403);
             this.RW_PWR_OUT.Name = "RW_PWR_OUT";
-            this.RW_PWR_OUT.Size = new System.Drawing.Size(100, 22);
+            this.RW_PWR_OUT.Size = new System.Drawing.Size(108, 22);
             this.RW_PWR_OUT.TabIndex = 12;
             // 
             // TMP_OUTPUT
             // 
-            this.TMP_OUTPUT.Location = new System.Drawing.Point(905, 480);
+            this.TMP_OUTPUT.Location = new System.Drawing.Point(881, 496);
             this.TMP_OUTPUT.Name = "TMP_OUTPUT";
-            this.TMP_OUTPUT.Size = new System.Drawing.Size(95, 22);
+            this.TMP_OUTPUT.Size = new System.Drawing.Size(108, 22);
             this.TMP_OUTPUT.TabIndex = 13;
             // 
             // Jig_enable
@@ -275,11 +277,11 @@
             this.label6.Text = "OFF";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // Form1
+            // RF_JIG
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.SlateGray;
+            this.BackColor = System.Drawing.Color.MidnightBlue;
             this.ClientSize = new System.Drawing.Size(1022, 616);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -301,8 +303,8 @@
             this.Controls.Add(this.btn_Open);
             this.Controls.Add(this.comboBox1);
             this.ForeColor = System.Drawing.SystemColors.Control;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "RF_JIG";
+            this.Text = "RF_JIG_TEST";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.TEMP_M)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FW_POWER)).EndInit();
